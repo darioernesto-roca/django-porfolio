@@ -1,0 +1,24 @@
+{% extends 'landing-layout.html' %}
+{% load static %}
+
+{% block content %}
+    {% include "partials/navbar.html" with nav_class='navbar-light' %}
+    {% include "hero/hero-8.html" %}
+{% endblock content %}
+
+{% block extra_javascript %}
+    <!-- Typed -->
+    <script src="{% static 'js/typed.js' %}"></script>
+    <script src="{% static 'js/typed.init.js' %}"></script>
+
+    <!-- Animation -->
+    <script src="{% static 'js/aos.js' %} "></script>
+
+    <!-- Animation Js -->
+    <script>
+        AOS.init({
+            easing: 'ease-in-out-sine',
+            duration: 1000
+        });
+    </script>
+{% endblock extra_javascript %}

@@ -1,0 +1,13 @@
+{% extends 'landing-layout.html' %}
+{% load static %}
+
+{% block content %}
+    {% include "partials/navbar.html" with nav_class='navbar-dark' %}
+    {% include "hero/hero-4.html" %}
+{% endblock content %}
+
+{% block extra_javascript %}
+    <!-- Typed -->
+    <script src="{% static 'js/typed.js' %}"></script>
+    <script src="{% static 'js/typed.init.js' %} "></script>
+{% endblock extra_javascript %}

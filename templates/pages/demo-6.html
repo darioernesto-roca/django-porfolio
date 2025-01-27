@@ -1,0 +1,20 @@
+{% extends 'landing-layout.html' %}
+{% load static %}
+
+{% block content %}
+    {% include "partials/navbar.html" with nav_class='navbar-dark' %}
+    {% include "hero/hero-6.html" %}
+{% endblock content %}
+
+{% block extra_javascript %}
+    <!-- JQuery -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <!-- Ripples -->
+    <script src="{% static 'js/jquery.ripples-min.js' %}"></script>
+    <script src="{% static 'js/ripple.init.js' %}"></script>
+
+    <!-- Typed -->
+    <script src="{% static 'js/typed.js' %}"></script>
+    <script src="{% static 'js/typed.init.js' %}"></script>
+{% endblock extra_javascript %}

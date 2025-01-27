@@ -1,0 +1,25 @@
+{% extends 'landing-layout.html' %}
+{% load static %}
+
+{% block content %}
+    {% include "partials/navbar.html" with nav_class='navbar-light' %}
+    {% include "hero/hero-3.html" %}
+{% endblock content %}
+
+{% block extra_javascript %}
+    <!-- Typed -->
+    <script src="{% static 'js/typed.js' %}"></script>
+    <script src="{% static 'js/typed.init.js' %} "></script>
+
+    <script>
+    // Typed Text
+    var typedSecond = new Typed('#typed-second', {
+        stringsElement: '#typed-strings',
+        typeSpeed: 200,
+        loop: true,
+        strings: [
+            'Web Designer', 'Web Developer', 'Photographer',
+        ],
+    });
+    </script>
+{% endblock extra_javascript %}

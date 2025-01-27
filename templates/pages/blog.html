@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    {% include "partials/navbar.html" with nav_class='navbar-light' %}
+    {% include "hero/blog-hero.html" %}
+
+    
+    <!-- Blog STart -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                    <div class="pad-right-left m-2">
+                        <div class="blog-post rounded customer-testi">
+                            <div class="position-relative">
+                                <img src="{% static 'images/blog/01.jpg' %}" class="img-fluid rounded-top" alt="">
+                            </div>
+                            <div class="content pt-4 pb-4 p-3">
+                                <h5><a class='title text-dark' href="{% url 'pages:dynamic_pages' template_name='blog-detail' %}">Design your apps in your own way</a></h5>
+                                <p class="text-light-muted mb-3">This is required when, for example, the final text is not yet available.</p> 
+                                <div class="post-meta d-flex justify-content-between mt-3">
+                                    <ul class="list-unstyled mb-0 d-flex justify-content-between">
+                                        <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-light-muted date"><i class="mdi mdi-calendar-edit me-1"></i>Dec 19</a></li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="text-muted readmore">Read More <i class="mdi mdi-chevron-right"></i></a>
+                                </div>
+                            </div><!--end content-->
+                        </div><!--end blog post-->
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                    <div class="pad-right-left m-2">
+                        <div class="blog-post rounded customer-testi">
+                            <div class="position-relative">
+                                <img src="{% static 'images/blog/02.jpg' %}" class="img-fluid rounded-top" alt="">
+                            </div>
+                            <div class="content pt-4 pb-4 p-3">
+                                <h5><a class='title text-dark' href="{% url 'pages:dynamic_pages' template_name='blog-detail' %}">How apps is changing the IT world</a></h5>
+                                <p class="text-light-muted mb-3">This is required when, for example, the final text is not yet available.</p> 
+                                <div class="post-meta d-flex justify-content-between mt-3">
+                                    <ul class="list-unstyled mb-0 d-flex justify-content-between">
+                                        <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-light-muted date"><i class="mdi mdi-calendar-edit me-1"></i>Dec 19</a></li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="text-muted readmore">Read More <i class="mdi mdi-chevron-right"></i></a>
+                                </div>
+                            </div><!--end content-->
+                        </div><!--end blog post-->
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                    <div class="pad-right-left m-2">
+                        <div class="blog-post rounded customer-testi">
+                            <div class="position-relative">
+                                <img src="{% static 'images/blog/03.jpg' %}" class="img-fluid rounded-top" alt="">
+                            </div>
+                            <div class="content pt-4 pb-4 p-3">
+                                <h5><a class='title text-dark' href="{% url 'pages:dynamic_pages' template_name='blog-detail' %}">Smartest Applications for Business</a></h5>
+                                <p class="text-light-muted mb-3">This is required when, for example, the final text is not yet available.</p> 
+                                <div class="post-meta d-flex justify-content-between mt-3">
+                                    <ul class="list-unstyled mb-0 d-flex justify-content-between">
+                                        <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-light-muted date"><i class="mdi mdi-calendar-edit me-1"></i>Dec 19</a></li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="text-muted readmore">Read More <i class="mdi mdi-chevron-right"></i></a>
+                                </div>
+                            </div><!--end content-->
+                        </div><!--end blog post-->
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                    <div class="pad-right-left m-2">
+                        <div class="blog-post rounded customer-testi">
+                            <div class="position-relative">
+                                <img src="{% static 'images/blog/04.jpg' %}" class="img-fluid rounded-top" alt="">
+                            </div>
+                            <div class="content pt-4 pb-4 p-3">
+                                <h5><a class='title text-dark' href="{% url 'pages:dynamic_pages' template_name='blog-detail' %}">How apps is changing the IT world</a></h5>
+                                <p class="text-light-muted mb-3">This is required when, for example, the final text is not yet available.</p> 
+                                <div class="post-meta d-flex justify-content-between mt-3">
+                                    <ul class="list-unstyled mb-0 d-flex justify-content-between">
+                                        <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-light-muted date"><i class="mdi mdi-calendar-edit me-1"></i>Dec 19</a></li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="text-muted readmore">Read More <i class="mdi mdi-chevron-right"></i></a>
+                                </div>
+                            </div><!--end content-->
+                        </div><!--end blog post-->
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                    <div class="pad-right-left m-2">
+                        <div class="blog-post rounded customer-testi">
+                            <div class="position-relative">
+                                <img src="{% static 'images/blog/05.jpg' %}" class="img-fluid rounded-top" alt="">
+                            </div>
+                            <div class="content pt-4 pb-4 p-3">
+                                <h5><a class='title text-dark' href="{% url 'pages:dynamic_pages' template_name='blog-detail' %}">Design your apps in your own way</a></h5>
+                                <p class="text-light-muted mb-3">This is required when, for example, the final text is not yet available.</p> 
+                                <div class="post-meta d-flex justify-content-between mt-3">
+                                    <ul class="list-unstyled mb-0 d-flex justify-content-between">
+                                        <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-light-muted date"><i class="mdi mdi-calendar-edit me-1"></i>Dec 19</a></li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="text-muted readmore">Read More <i class="mdi mdi-chevron-right"></i></a>
+                                </div>
+                            </div><!--end content-->
+                        </div><!--end blog post-->
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                    <div class="pad-right-left m-2">
+                        <div class="blog-post rounded customer-testi">
+                            <div class="position-relative">
+                                <img src="{% static 'images/blog/06.jpg' %}" class="img-fluid rounded-top" alt="">
+                            </div>
+                            <div class="content pt-4 pb-4 p-3">
+                                <h5><a class='title text-dark' href="{% url 'pages:dynamic_pages' template_name='blog-detail' %}">Smartest Applications for Business</a></h5>
+                                <p class="text-light-muted mb-3">This is required when, for example, the final text is not yet available.</p> 
+                                <div class="post-meta d-flex justify-content-between mt-3">
+                                    <ul class="list-unstyled mb-0 d-flex justify-content-between">
+                                        <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-light-muted date"><i class="mdi mdi-calendar-edit me-1"></i>Dec 19</a></li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="text-muted readmore">Read More <i class="mdi mdi-chevron-right"></i></a>
+                                </div>
+                            </div><!--end content-->
+                        </div><!--end blog post-->
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                    <div class="pad-right-left m-2">
+                        <div class="blog-post rounded customer-testi">
+                            <div class="position-relative">
+                                <img src="{% static 'images/blog/07.jpg' %}" class="img-fluid rounded-top" alt="">
+                            </div>
+                            <div class="content pt-4 pb-4 p-3">
+                                <h5><a class='title text-dark' href="{% url 'pages:dynamic_pages' template_name='blog-detail' %}">Design your apps in your own way</a></h5>
+                                <p class="text-light-muted mb-3">This is required when, for example, the final text is not yet available.</p> 
+                                <div class="post-meta d-flex justify-content-between mt-3">
+                                    <ul class="list-unstyled mb-0 d-flex justify-content-between">
+                                        <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-light-muted date"><i class="mdi mdi-calendar-edit me-1"></i>Dec 19</a></li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="text-muted readmore">Read More <i class="mdi mdi-chevron-right"></i></a>
+                                </div>
+                            </div><!--end content-->
+                        </div><!--end blog post-->
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                    <div class="pad-right-left m-2">
+                        <div class="blog-post rounded customer-testi">
+                            <div class="position-relative">
+                                <img src="{% static 'images/blog/08.jpg' %}" class="img-fluid rounded-top" alt="">
+                            </div>
+                            <div class="content pt-4 pb-4 p-3">
+                                <h5><a class='title text-dark' href="{% url 'pages:dynamic_pages' template_name='blog-detail' %}">Smartest Applications for Business</a></h5>
+                                <p class="text-light-muted mb-3">This is required when, for example, the final text is not yet available.</p> 
+                                <div class="post-meta d-flex justify-content-between mt-3">
+                                    <ul class="list-unstyled mb-0 d-flex justify-content-between">
+                                        <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-light-muted date"><i class="mdi mdi-calendar-edit me-1"></i>Dec 19</a></li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="text-muted readmore">Read More <i class="mdi mdi-chevron-right"></i></a>
+                                </div>
+                            </div><!--end content-->
+                        </div><!--end blog post-->
+                    </div>
+                </div><!--end col-->
+
+                <!-- PAGINATION START -->
+                <div class="col-12">
+                    <ul class="pagination justify-content-center mb-0">
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)" aria-label="Previous">Prev</a></li>
+                        <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void(0)" aria-label="Next">Next</a></li>
+                    </ul>
+                </div><!--end col-->
+                <!-- PAGINATION END -->
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+    <!-- Blog End -->
+{% endblock content %}
+
+{% block javascript %}
+    <!-- Javascript -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Feather icon -->
+    <script src="{% static 'js/feather.min.js' %}"></script>
+    
+    <!-- Main Js -->
+    <script src="{% static 'js/app.js' %}"></script>
+{% endblock javascript %}

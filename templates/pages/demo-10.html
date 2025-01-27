@@ -1,0 +1,17 @@
+{% extends 'box_layout.html' %}
+{% load static %}
+
+{% block content %}
+    {% include "partials/navbar.html" with nav_class='boxed-home' %}
+    {% include "hero/hero-10.html" %}
+{% endblock content %}
+
+{% block hero %}
+    {% include "hero/hero-10.html" %}
+{% endblock hero %}
+
+{% block extra_javascript %}
+    <!-- Typed -->
+    <script src="{% static 'js/typed.js' %}"></script>
+    <script src="{% static 'js/typed.init.js' %}"></script>
+{% endblock extra_javascript %}

@@ -1,0 +1,12 @@
+{% extends 'landing-layout.html' %}
+{% load static %}
+
+{% block content %}
+    {% include "partials/navbar.html" with nav_class='navbar-light' %}
+    {% include "hero/hero-2.html" %}
+{% endblock content %}
+
+{% block extra_javascript %}
+    <!-- Text Rotate Js -->
+    <script src="{% static 'js/textrotate.init.js' %}"></script>
+{% endblock extra_javascript %}

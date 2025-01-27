@@ -1,0 +1,24 @@
+{% extends 'landing-layout.html' %}
+{% load static %}
+
+{% block content %}
+    {% include "partials/navbar.html" with nav_class='navbar-dark' %}
+    {% include "hero/hero-7.html" %}
+{% endblock content %}
+
+{% block extra_javascript %}
+    <!-- Background Slider -->
+    <script src="{% static 'js/easy_background.js' %}"></script>
+
+    <!-- Typed -->
+    <script src="{% static 'js/typed.js' %}"></script>
+    <script src="{% static 'js/typed.init.js' %}"></script>
+
+    <script>
+    easy_background("#home",{
+            slide: ["{% static 'images/home/hero-bg1.jpg' %}", "{% static 'images/home/hero-bg2.jpg' %}", "{% static 'images/home/hero-bg3.jpg' %}"],
+            delay: [2000, 2000, 2000]
+        }
+    );
+    </script>
+{% endblock extra_javascript %}
