@@ -91,4 +91,5 @@ python manage.py test
 
 ## License
 
-No license file is currently included in this repository. Add one if you intend to distribute or open-source the project.
+This project is open source and shared primarily for learning and educational purposes under the MIT License (see `LICENSE`).
+
