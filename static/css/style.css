@@ -1777,3 +1777,12 @@ button:not(:disabled) {
   height: 1px;
   background: #e5eaef;
 }
+/* HTMX request feedback */
+.htmx-indicator {
+    display: none;
+}
+
+.htmx-request .htmx-indicator,
+.htmx-request.htmx-indicator {
+    display: inline-block;
+}
