@@ -14,7 +14,7 @@ The application currently provides:
 - HTMX-enhanced contact form submissions without a full-page refresh
 - Alpine.js message-length feedback on the contact form
 - Server-side contact validation with a non-JavaScript form submission fallback
-- Persistent contact messages stored in SQLite and searchable through Django admin
+- Persistent contact messages stored in PostgreSQL and searchable through Django admin
 - Automated tests for the contact form and service endpoint
 
 Portfolio, blog, résumé, and authentication content is currently template-based.
@@ -26,7 +26,7 @@ Only contact messages are stored in a Django model.
 
 - Python 3
 - Django 5.1
-- SQLite for local development
+- PostgreSQL
 
 ### Frontend
 
@@ -106,16 +106,35 @@ python -m pip install -r requirements.txt
 
 No Node.js installation or frontend build step is currently required.
 
-### 4. Apply database migrations
+### 4. Configure PostgreSQL
+
+Create a PostgreSQL database and user, then expose the connection settings as
+environment variables. The values below match the development defaults in
+`queue_django/settings.py`; use a strong, private password outside local
+development.
+
+```bash
+export POSTGRES_DB=portfolio
+export POSTGRES_USER=postgres
+export POSTGRES_PASSWORD=postgres
+export POSTGRES_HOST=localhost
+export POSTGRES_PORT=5432
+```
+
+The application reads these variables directly and does not load a `.env` file.
+If a variable is omitted, the corresponding development value shown above is
+used.
+
+### 5. Apply database migrations
 
 ```bash
 python manage.py migrate
 ```
 
-This creates the development database and the table used to store contact
-messages.
+This creates the tables, including the table used to store contact messages, in
+the configured PostgreSQL database.
 
-### 5. Optionally create an administrator
+### 6. Optionally create an administrator
 
 ```bash
 python manage.py createsuperuser
@@ -123,7 +142,7 @@ python manage.py createsuperuser
 
 After signing in at `/admin/`, contact messages can be viewed and searched.
 
-### 6. Run the development server
+### 7. Run the development server
 
 ```bash
 python manage.py runserver
@@ -188,7 +207,7 @@ production. Before deployment:
 - Configure `ALLOWED_HOSTS`.
 - Configure HTTPS redirects, HSTS, and secure session and CSRF cookies.
 - Configure production static-file serving.
-- Use a production database and define backup and retention policies for contact data.
+- Use dedicated PostgreSQL credentials and define backup and retention policies for contact data.
 - Add rate limiting or spam protection to the public contact endpoint.
 - Review whether HTMX and Alpine.js should be self-hosted and add an appropriate
   Content Security Policy.
