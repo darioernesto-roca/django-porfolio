@@ -109,21 +109,19 @@ No Node.js installation or frontend build step is currently required.
 ### 4. Configure PostgreSQL
 
 Create a PostgreSQL database and user, then expose the connection settings as
-environment variables. The values below match the development defaults in
-`queue_django/settings.py`; use a strong, private password outside local
-development.
+environment variables. Set `POSTGRES_PASSWORD` to the password for your local
+database user before running any Django management command; it is required and
+has no default value.
 
 ```bash
 export POSTGRES_DB=portfolio
 export POSTGRES_USER=postgres
-export POSTGRES_PASSWORD=postgres
 export POSTGRES_HOST=localhost
 export POSTGRES_PORT=5432
 ```
 
 The application reads these variables directly and does not load a `.env` file.
-If a variable is omitted, the corresponding development value shown above is
-used.
+The non-password variables use the development values shown above when omitted.
 
 ### 5. Apply database migrations
 
