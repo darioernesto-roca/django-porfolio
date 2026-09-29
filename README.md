@@ -14,7 +14,7 @@ The application currently provides:
 - HTMX-enhanced contact form submissions without a full-page refresh
 - Alpine.js message-length feedback on the contact form
 - Server-side contact validation with a non-JavaScript form submission fallback
-- Persistent contact messages stored in SQLite and searchable through Django admin
+- Persistent contact messages stored in PostgreSQL and searchable through Django admin
 - Automated tests for the contact form and service endpoint
 
 Portfolio, blog, résumé, and authentication content is currently template-based.
@@ -26,7 +26,7 @@ Only contact messages are stored in a Django model.
 
 - Python 3
 - Django 5.1
-- SQLite for local development
+- PostgreSQL
 
 ### Frontend
 
@@ -106,16 +106,34 @@ python -m pip install -r requirements.txt
 
 No Node.js installation or frontend build step is currently required.
 
-### 4. Apply database migrations
+### 4. Configure the environment
+
+Create a PostgreSQL database and user, then set the following environment
+variables locally before running Django. No credentials or fallback values are
+stored in the project:
+
+```text
+DJANGO_SECRET_KEY
+POSTGRES_DB
+POSTGRES_USER
+POSTGRES_PASSWORD
+POSTGRES_HOST
+POSTGRES_PORT
+```
+
+The application reads these variables directly and does not load a `.env` file.
+All listed variables are required.
+
+### 5. Apply database migrations
 
 ```bash
 python manage.py migrate
 ```
 
-This creates the development database and the table used to store contact
-messages.
+This creates the tables, including the table used to store contact messages, in
+the configured PostgreSQL database.
 
-### 5. Optionally create an administrator
+### 6. Optionally create an administrator
 
 ```bash
 python manage.py createsuperuser
@@ -123,7 +141,7 @@ python manage.py createsuperuser
 
 After signing in at `/admin/`, contact messages can be viewed and searched.
 
-### 6. Run the development server
+### 7. Run the development server
 
 ```bash
 python manage.py runserver
@@ -183,12 +201,12 @@ rejection of unsupported request methods.
 The included settings are for local development and must not be used unchanged in
 production. Before deployment:
 
-- Read the secret key from a protected environment variable.
+- Store the secret key and PostgreSQL credentials in protected environment variables.
 - Disable `DEBUG`.
 - Configure `ALLOWED_HOSTS`.
 - Configure HTTPS redirects, HSTS, and secure session and CSRF cookies.
 - Configure production static-file serving.
-- Use a production database and define backup and retention policies for contact data.
+- Define backup and retention policies for contact data.
 - Add rate limiting or spam protection to the public contact endpoint.
 - Review whether HTMX and Alpine.js should be self-hosted and add an appropriate
   Content Security Policy.
